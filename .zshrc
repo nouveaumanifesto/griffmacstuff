@@ -100,5 +100,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias c="clear"
+# Homebrew Related
+alias dump="brew bundle dump --file=/Users/nm/Dropbox/0\ Backup/homebrew/Brewfile --force"
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; mas upgrade; brew cu -afy; brew cleanup'
+
+# Conversion
+alias jpg="mkdir jpegs; sips -s format jpeg *.* --out jpegs"
+alias png="mkdir pngs; sips -s format png *.* --out pngs"
+alias t2p="ls *.tif | xargs -I% convert % %.pdf"
+
+# Terminal Shortcuts
 alias ls="ls -la"
+alias g="git"
+alias c="clear"
+
+# Network Related
+alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
+
+# Finder Shortcuts
+alias showh="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hideh="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+# Maintenance
+alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Directory Shortcuts
+alias d="cd ~/Documents"
+alias dl="cd ~/Downloads"
+alias gh="cd ~"
+alias drago="cd /Volumes/Hecate"
