@@ -131,3 +131,5 @@ alias d="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias gh="cd ~"
 alias drago="cd /Volumes/Hecate"
+
+alias cb="/Applications/World\ of\ Warcraft/_retail_/CurseBreaker"
